@@ -1,1 +1,18 @@
-<p>brand worked</p>
+<div class="card-body">
+    <div class="row">
+        <div class="col-md-6 offset-md-3 col-12">
+
+            <form [formGroup]="brandForm" (ngSubmit)="submit()">
+                <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-3 col-form-label">Brand Name :</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" fromcontrolName="vbrandName" />
+                    </div>
+                </div>
+            </form>
+            
+            <button type="submit"> Add Brand </button>
+
+        </div>
+    </div>
+</div>

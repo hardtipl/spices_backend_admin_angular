@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
+import { BrandService } from 'src/app/services/brand.service';
 
 @Component({
   selector: 'app-brand',
@@ -6,10 +8,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./brand.component.css']
 })
 export class BrandComponent implements OnInit {
-
-  constructor() { }
-
+  brandForm:any
+  
+  constructor(private fb:FormBuilder,private brand:BrandService) { 
+    
+    this.brandForm=this.fb.group({
+    vbrandName:['', [Validators.required]],
+    estatus : ['Active',[Validators.required]]
+    
+  });
+  
+}  
   ngOnInit(): void {
   }
-
+  submit() {
+    console.log(this.brandForm.value)
+   }
 }
